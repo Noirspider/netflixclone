@@ -10,7 +10,7 @@ function App() {
       <MyNavbar />
       <Header />
       <div style={{ padding: "0 2rem" }}>
-        <Movies title="Star Trek" category="Star Trek Colleciton" />
+        <Movies title="Star Trek" category="Star Trek Collection" />
         <Movies title="Christmas" category="Christmas" />
         <Movies title="Spider-man" category="Spider-Man Collection" />
         <Movies title="One Piece" category="One Piece Collection" />
