@@ -1,6 +1,6 @@
 import React from "react";
-import LogoNetflix from "../assets/netflix_logo.png";
-import Avatar from "../assets/avatar.png";
+import LogoNetflix from "./assets/netflix_logo.png";
+import Avatar from "./assets/avatar.png";
 import { Navbar, Nav, NavDropdown, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";

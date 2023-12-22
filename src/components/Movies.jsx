@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Row } from "react-bootstrap";
 import SingleMovie from "./SingleMovie";
 import "../style.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Movies = (props) => {
   const [movies, setMovies] = useState([]);
@@ -17,23 +20,48 @@ const Movies = (props) => {
 
     fetchMovies();
   }, [props.title]);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <>
       <h2>{props.category}</h2>
-      <Row>
+      <Slider {...settings}>
         {movies.Search &&
-          movies.Search.slice(0, 6).map((movie, index) => (
-            <Col
-              xs={6}
-              md={3}
-              lg={2}
-              className={`d-${index >= 2 ? "none" : "block"} d-md-${index >= 4 ? "none" : "block"} d-lg-block`}
-            >
-              <SingleMovie key={movie.imdbID} img={movie.Poster} />
-            </Col>
+          movies.Search.map((movie) => (
+            <div key={movie.imdbID}>
+              <SingleMovie img={movie.Poster} />
+            </div>
           ))}
-      </Row>
+      </Slider>
     </>
   );
 };
