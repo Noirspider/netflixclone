@@ -16,7 +16,6 @@ function App() {
         <Movies title="One Piece" category="One Piece Collection" />
         <Movies title="star wars" category="Star Wars Colleciton" />
         <Movies title="marvel" category="Marvel Collection" />
-        <Movies title="spy kids" category="Spy Kids Collection" />
       </div>
       <MyFooter />
     </>
